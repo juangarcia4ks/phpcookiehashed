@@ -1,9 +1,9 @@
 <?php
 
 return new PDO(
-    'mysql:host=<TU_HOST>;dbname=<TU_DBNAME>',
-    '<TU_USERNAME>',
-    '<TU_PASSWORD>',
+    'mysql:host=' . getenv('MYSQL_SERVICE_HOST') . ';dbname=' . getenv('MYSQL_DATABASE'),
+    getenv('MYSQL_USER'),
+    getenv('MYSQL_PASSWORD'),
     [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
